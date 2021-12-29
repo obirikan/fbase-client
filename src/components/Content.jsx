@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 
 function Content({status,setStatus}) {
      useEffect(async () => {
-  await axios.get('http://localhost:5000/users').then((res)=>{
+  await axios.get('https://ocorp-funbase.herokuapp.com/users').then((res)=>{
    setStatus(res.data)
   }).catch((e)=>{
     alert(e)
@@ -12,7 +12,7 @@ function Content({status,setStatus}) {
  }, [])
 
  const D=(id)=>{
-    axios.delete(`http://localhost:5000/delete/${id}`).then(()=>{
+    axios.delete(`https://ocorp-funbase.herokuapp.com/users/delete/${id}`).then(()=>{
         setStatus(status.filter((all)=>{
          return   all._id !== id
         }))

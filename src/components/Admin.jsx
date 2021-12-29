@@ -3,7 +3,7 @@ import axios from 'axios'
 
 function Admin({name,setName,url,seturl,description,setdes,status,setStatus}) {
  const add=()=>{
-     axios.post('http://localhost:5000/add',{name:name,url:url,description:description}).then(()=>{
+     axios.post('https://ocorp-funbase.herokuapp.com/add',{name:name,url:url,description:description}).then(()=>{
        alert('sent')
        setName('')
        setStatus([...status,{name:name,url:url,description:description}])
